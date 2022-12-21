@@ -15,15 +15,17 @@
         <div class="logo">Serge <span>Dev</span></div>
         <ul class="main-menu">
           <li class="nav-item">
-            <a href="#banner-area" class="active nav-link">Home</a>
+            <a href="#banner-area" class="nav-link">Home</a>
           </li>
 
           <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link">Services</a>
+          </li>
           <li class="nav-item"><a href="" class="nav-link">Resume</a></li>
           <li class="nav-item"><a href="" class="nav-link">Portfolio</a></li>
           <li class="nav-item"><a href="" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Blog</a></li> -->
           <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
         </ul>
 
@@ -450,4 +452,34 @@
     backSpeed: 50,
     loop: true,
   });
+
+
+  // console log the current section id
+  const sections = document.querySelectorAll("section");
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+        const ul=document.querySelectorAll('li a')
+        ul.forEach((li)=>{
+          li.classList.remove('active')
+          if(li.getAttribute('href')===`#${id}`){
+            li.classList.add('active')
+          }
+        })
+      }
+    });
+  }, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+  
+  
 </script>
