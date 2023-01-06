@@ -110,11 +110,13 @@ document.addEventListener('keydown', (e) => {
 function sendMail() {
 
     var tempParams = {
+        from_email: document.getElementById("email").value,
+        from_subject: document.getElementById("subject").value,
         from_name: document.getElementById("name").value,
         to_name: 'Tuyishime',
         message: document.getElementById("message").value,
     };
-
+ 
     showLoader();
 
 
