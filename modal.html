@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #modal-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        transition: all 0.5s ease;
+      }
+
+      #modal {
+        position: relative;
+        width: 500px;
+        max-width: 90%;
+        height: auto;
+        max-height: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        overflow: auto;
+      }
+
+      #modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      #modal-header h2 {
+        margin: 0;
+      }
+
+      #close-button {
+        background-color: transparent;
+        border: 0;
+        color: #888;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      #modal-body {
+        padding: 20px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="modal-container">
+      <div id="modal">
+        <div id="modal-header">
+          <h2>Modal Title</h2>
+          <button id="close-button">X</button>
+        </div>
+        <div id="modal-body">Modal content goes here</div>
+      </div>
+    </div>
+
+    <button id="show-button">Show Modal</button>
+
+    <script>
+      var modalContainer = document.getElementById("modal-container");
+      var modal = document.getElementById("modal");
+      var closeButton = document.getElementById("close-button");
+
+      // Show the modal when the show button is clicked
+      document
+        .getElementById("show-button")
+        .addEventListener("click", function () {
+          modalContainer.style.display = "block";
+        });
+
+      // Hide the modal when the close button is clicked
+      closeButton.addEventListener("click", function () {
+        modalContainer.style.display = "none";
+      });
+
+      // Hide the modal when the user clicks outside of the modal
+      modalContainer.addEventListener("click", function (event) {
+        if (event.target === modalContainer) {
+          modalContainer.style.display = "none";
+        }
+      });
+
+      //Hide the modal when the user presses the escape key
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+            modalContainer.style.display = "none";
+            }
+        });
+
+    </script>
+  </body>
+</html>

@@ -6,6 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <style>
+      .response.success{
+        background: rgb(175, 250, 175);
+        color: rgb(0, 96, 29);
+        font-size: 10px;
+        padding: 5px 10px;
+        border: 1px solid rgb(233, 255, 233);
+        border-radius: 10px;
+      }
+
+      .response.danger{
+        background: rgb(250, 175, 175);
+        color: rgb(96, 0, 0);
+        font-size: 10px;
+        padding: 5px 10px;
+        border: 1px solid rgb(255, 233, 233);
+        border-radius: 10px;
+      }
+
+
+      .msg {
+
+        margin: 0;
+        transition: all 0.5s ease-in-out;
+      }
+     
+      /* animate ping the .btn */
+      .animate-pulse {
+        animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+        color: white;
+      }
+
+      @keyframes ping {
+        0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 0;
+      }
+    }
+    </style>
     <title>Welcome to SergeDev</title>
   </head>
 
@@ -22,17 +68,22 @@
           <li class="nav-item">
             <a href="#services" class="nav-link">Services</a>
           </li>
-          <li class="nav-item"><a href="" class="nav-link">Resume</a></li>
-          <li class="nav-item"><a href="" class="nav-link">Portfolio</a></li>
-          <li class="nav-item"><a href="" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="" class="nav-link">Blog</a></li> -->
-          <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
+          <!-- <li class="nav-item"><a class="nav-link">Resume</a></li> -->
+          <li class="nav-item">
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+          </li>
+          <!-- <li class="nav-item"><a class="nav-link">Pricing</a></li> -->
+          <!-- <li class="nav-item"><a class="nav-link">Blog</a></li> -->
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
         </ul>
 
         <!-- humberger menu -->
-        <div class="hamburger-menu">
+        <div class="hamburger-menu" id="humberger-main">
           <div class="bar"></div>
           <div class="bar"></div>
+          
           <div class="bar"></div>
         </div>
       </nav>
@@ -53,7 +104,7 @@
             ever
           </p>
         </div>
-        <button class="btn" href="" class="btn">Download my cv</button>
+        <button class="btn" class="btn">Download my cv</button>
       </div>
     </section>
 
@@ -329,7 +380,7 @@
               </svg>
             </div>
 
-            <div class="text-lg">Web design</div>
+            <div class="text-lg">Web scraping</div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
               quod. Lorem ipsum dolor sit amet consectetur.
@@ -354,7 +405,7 @@
               </svg>
             </div>
 
-            <div class="text-lg">Web design</div>
+            <div class="text-lg">Graphic design</div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
               quod. Lorem ipsum dolor sit amet consectetur.
@@ -379,7 +430,7 @@
               </svg>
             </div>
 
-            <div class="text-lg">Web design</div>
+            <div class="text-lg">Branding</div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
               quod. Lorem ipsum dolor sit amet consectetur.
@@ -404,7 +455,7 @@
               </svg>
             </div>
 
-            <div class="text-lg">Web design</div>
+            <div class="text-lg">Printing</div>
             <div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -431,7 +482,7 @@
               </svg>
             </div>
 
-            <div class="text-lg">Web design</div>
+            <div class="text-lg">Web maintenance</div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
               quod. Lorem ipsum dolor sit amet consectetur.
@@ -441,20 +492,181 @@
       </div>
     </section>
 
+    <section id="portfolio">
+      <div class="about-area">
+        <div class="section-title">
+          <h1 class="primary-h1">Portfolio</h1>
+          <p>See My Works - Lorem ipsum dolor</p>
+        </div>
+
+        <div class="porfolio-list">
+          <ul>
+            <li>
+              <a class="active-item" href="#">All</a>
+              <a href="#">Designing</a>
+              <a href="#">Graphic</a>
+              <a href="#">Websites</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex px-2 m-4">
+          <div class="portfolio-item">
+            <a class="portfolio-item-img">
+              <img
+                src="img/calculator.png"
+                alt=""
+              />
+            </a>
+            <div
+              data-modal-content="img/calculator.png"
+              data-modal-target="#modal2" 
+              data-modal-link="https://codepen.io/boysonserge/pen/BaPQWrE"
+              data-modal-title="Calculator"
+              id="portfolioOverlay"
+              class="portfolio-item-overlay"
+            >
+              <h3>Calculator</h3>
+              <p>Web design</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <a class="portfolio-item-img">
+              <img
+                src="img/todo.png"
+                alt=""
+              />
+            </a>
+            <div
+              data-modal-content="img/todo.png"
+              data-modal-target="#modal2"
+              data-modal-link="https://codepen.io/boysonserge/pen/ExpKEWg"
+              data-modal-title="Todo list"
+              id="portfolioOverlay"
+              class="portfolio-item-overlay"
+            >
+              <h3>Todo list</h3>
+              <p>Design</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- modal -->
+
+        <div class="modal" id="modal2">
+          <div class="modal-body">
+            <div class="image">
+              <img id="project-image" alt="" />
+            </div>
+
+            <div class="px-2 flexcol">
+              <div class="flex-2">
+                <div>
+                  <span class="project-title" id="project-title"></span>
+                  <div class="project-category">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      style="width: 20px; height: 20px"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776"
+                      />
+                    </svg>
+                    <span>Designing</span>
+                  </div>
+                </div>
+
+                <div class="modal-header">
+                  <button data-close-button class="close-button">
+                    &times;
+                  </button>
+                </div>
+              </div>
+              <div class="project-details">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Dolores quidem laboriosam, repudiandae unde at ipsa excepturi
+                impedit ullam repellat
+              </div>
+
+              <div class="project-view">
+                <a target="__blank" href="" class="btn w-full" id="project-link">View project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="overlay"></div>
+
+        <a href="" class="btn">View more</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h1 class="primary-h1">Get in touch</h1>
+        <p>
+          Need help or have a question? Please don't hesitate to contact us
+          using the form below or by emailing us at boysondesign@gmail.com
+        </p>
+      </div>
+
+      <form action="">
+        <div class="flex-2">
+          <div class="form-control">
+            <input  type="text" placeholder="Your name" name="name" id="name" />
+          </div>
+  
+          <div class="form-control">
+            <input  type="text" placeholder="Your email" name="email" id="email" />
+            <p style="display: none;" class="msg" id="emailmsg">id</p>
+          </div>
+        </div>
+
+
+        <div class="form-control">
+          <input  type="text" placeholder="Subject" name="subject" id="" />
+        </div>
+
+        
+        <div class="form-control">
+          <textarea  name="message" id="message" cols="30" rows="10" placeholder="Your message..."></textarea>
+        </div>
+
+        <div class="form-control flex-2">
+          <button type="submit" class="btn">Send message</button>
+
+          <div class="animate-pulse" id="loader" style="display: none;"><small>Sending</small></div>
+        </div>
+        <div class="form-control">
+          <span id="response-msg" class="response" style="display: none;"></span>
+        </div>
+      </form>
+    </section>
+
     <p class="element"></p>
   </body>
 </html>
+
+<script src="https://unpkg.com/emailjs-com@2.4.1/dist/email.min.js"></script>
+
+
+<script src="main.js"></script>
 
 <script>
   var typed = new Typed(".element", {
     strings: ["Web developer.", "Graphic designer."],
     typeSpeed: 50,
     backSpeed: 50,
+    smartBackspace: true,
     loop: true,
   });
 
-
-  // console log the current section id
   const sections = document.querySelectorAll("section");
   const options = {
     root: null,
@@ -466,13 +678,13 @@
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute("id");
-        const ul=document.querySelectorAll('li a')
-        ul.forEach((li)=>{
-          li.classList.remove('active')
-          if(li.getAttribute('href')===`#${id}`){
-            li.classList.add('active')
+        const ul = document.querySelectorAll("li a");
+        ul.forEach((li) => {
+          li.classList.remove("active");
+          if (li.getAttribute("href") === `#${id}`) {
+            li.classList.add("active");
           }
-        })
+        });
       }
     });
   }, options);
@@ -480,6 +692,4 @@
   sections.forEach((section) => {
     observer.observe(section);
   });
-  
-  
 </script>
