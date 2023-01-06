@@ -24,15 +24,6 @@ const navlinks = document.querySelector('#nav-links')
 
 const links = document.querySelectorAll('#nav-links li')
 
-hamberger.addEventListener('click', () => {
-    // navlinks.classList.toggle('open')
-    // links.forEach(link => {
-    //     link.classList.toggle('fade')
-    // })
-
-    console.log('clicked')
-})
-
 
 document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
